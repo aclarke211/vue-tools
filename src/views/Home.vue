@@ -3,7 +3,8 @@
     <div class="component-list">
       <div class="category" v-for="(category, catKey) in categories" :key="catKey">
         <h1 class="category__title">{{ category.name }}</h1>
-        <div class="subcategory" v-for="(subcategory, subKey) in category.subcategories" :key="subKey">
+        <div class="subcategory" v-for="(subcategory, subKey) in category.subcategories"
+        :key="subKey">
           <h2 class="subcategory__title">{{ subcategory.name }}</h2>
           <ul class="subcategory__routes">
             <li
