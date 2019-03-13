@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: 'formModule',
+  name: 'FormComponent',
 };
 </script>

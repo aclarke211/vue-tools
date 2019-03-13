@@ -3,9 +3,14 @@ import Router from 'vue-router';
 
 const routes = [
   {
-    path: '/',
+    path: '*',
     name: 'home',
     component: () => import(/* webpackChunkName: "Home" */ './views/Home.vue'),
+  },
+  {
+    path: '/components/form',
+    name: 'formComponent',
+    component: () => import(/* webpackChunkName: "FormComponent" */ './components/FormComponent.vue'),
   },
   // {
   //   path: '/about',
