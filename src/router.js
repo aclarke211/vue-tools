@@ -8,7 +8,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "Home" */ './views/Home.vue'),
   },
   {
-    path: '/components/form',
+    path: '/components/general/form',
     name: 'formComponent',
     component: () => import(/* webpackChunkName: "FormComponent" */ './components/FormComponent.vue'),
   },
