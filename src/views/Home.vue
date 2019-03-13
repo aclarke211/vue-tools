@@ -2,7 +2,7 @@
   <div class="home">
     <div class="component-list">
       <h1>Components</h1>
-      <p>Available pages:</p>
+      <p>General:</p>
       <ul>
         <li
           v-for="componentRoute in componentRoutes"
