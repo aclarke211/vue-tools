@@ -40,6 +40,15 @@ export default {
           },
         ],
       },
+      {
+        name: 'Utils',
+        subcategories: [
+          {
+            name: 'General',
+            pathid: '/components/utils',
+          },
+        ],
+      },
     ],
   }),
   methods: {
