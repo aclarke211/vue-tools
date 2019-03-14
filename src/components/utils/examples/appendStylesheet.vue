@@ -5,13 +5,16 @@
     <input :class="['text-field', className]" type="text"
       :placeholder="stylesheetInputPlaceholder" v-model="currentStylesheet">
     <button :class="['btn', 'add-styles', className]" @click="addStylesheet()">
-      {{ btnText }}
+      {{ addStylesBtn.text }}
+    </button>
+    <button :class="['btn', 'remove-all-styles', className]" @click="removeStyles()">
+      {{ removeAllStylesBtn.text }}
     </button>
   </div>
 </template>
 
 <script>
-import { appendStylesheet } from '@/components/utils/appendStylesheet';
+import { appendStylesheet, removeAllStylesheets } from '@/components/utils/appendStylesheet';
 
 export default {
   name: 'appendStylesheet',
@@ -21,12 +24,21 @@ export default {
     description: 'Dynamically add a stylesheet after a page has been loaded.',
     currentStylesheet: 'https://www.jdsports.co.uk/skins/jdsports-desktop/public/dist/app.css?d7e6aa"',
     stylesheetInputPlaceholder: 'Add the path to an external stylesheet.',
-    btnText: 'ADD STYLESHEET',
+    addStylesBtn: {
+      text: 'ADD STYLESHEET',
+    },
+    removeAllStylesBtn: {
+      text: 'REMOVE STYLESHEETS',
+    },
   }),
 
   methods: {
     addStylesheet() {
       appendStylesheet(this.currentStylesheet);
+    },
+
+    removeStyles() {
+      removeAllStylesheets();
     },
   },
 };
