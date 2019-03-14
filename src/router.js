@@ -13,7 +13,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "FormComponent" */ './components/FormComponent.vue'),
   },
   {
-    path: '/utils/general/manage-stylesheets',
+    path: '/utils/styling/manage-stylesheets',
     name: 'manageStylesheets',
     component: () => import(/* webpackChunkName: "manageStylesheets" */ './components/utils/examples/manageStylesheets.vue'),
   },

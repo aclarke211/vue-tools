@@ -35,7 +35,7 @@ export default {
     homeTitle: 'Vue Components',
     categories: [
       {
-        name: 'Components',
+        name: 'Modules',
         subcategories: [
           {
             name: 'General',
@@ -43,7 +43,7 @@ export default {
         ],
       },
       {
-        name: 'Modules',
+        name: 'Components',
         subcategories: [
           {
             name: 'General',
@@ -54,7 +54,7 @@ export default {
         name: 'Utils',
         subcategories: [
           {
-            name: 'General',
+            name: 'Styling',
           },
         ],
       },
