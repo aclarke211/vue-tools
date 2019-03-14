@@ -3,7 +3,7 @@
     <h1 :class="['title', className]">{{ title }}</h1>
     <p :class="['description', 'text', className]">{{ description }}</p>
     <input :class="['text-field', className]" type="text"
-      placeholder="Add a stylesheet" v-model="currentStylesheet">
+      :placeholder="stylesheetInputPlaceholder" v-model="currentStylesheet">
     <button :class="['btn', 'add-styles', className]" @click="addStylesheet()">
       {{ btnText }}
     </button>
@@ -20,7 +20,7 @@ export default {
     title: 'Append Stylesheet',
     description: 'Dynamically add a stylesheet after a page has been loaded.',
     currentStylesheet: 'https://www.jdsports.co.uk/skins/jdsports-desktop/public/dist/app.css?d7e6aa"',
-    currentStylesheetPlaceholder: '',
+    stylesheetInputPlaceholder: 'Add the path to an external stylesheet.',
     btnText: 'ADD STYLESHEET',
   }),
 
