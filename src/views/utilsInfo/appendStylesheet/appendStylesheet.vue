@@ -4,29 +4,37 @@
     <p :class="['description', 'text', className]">{{ description }}</p>
     <input :class="['text-field', className]" type="text"
       placeholder="Add a stylesheet" v-model="currentStylesheet">
-    <div :class="['btn', 'add-styles', className]">{{ btnText }}</div>
+    <button :class="['btn', 'add-styles', className]" @click="buttonClicked()">{{ btnText }}</button>
   </div>
 </template>
 
 <script>
-// import appendStylesheet from '@/components/utils/appendStylesheet';
+import { appendStylesheet } from '@/components/utils/appendStylesheet';
 
 export default {
   name: 'appendStylesheet',
   data: () => ({
     className: 'append-stylesheet',
     title: 'Append Stylesheet',
-    description: 'This util allows you to add additional stylesheets to a page.',
-    currentStylesheet: '',
+    description: 'Dynamically add a stylesheet after a page has been loaded.',
+    currentStylesheet: '@/views/utilsInfo/appendStylesheet/exampleStylesheet.css',
+    currentStylesheetPlaceholder: '',
     btnText: 'ADD STYLESHEET',
   }),
+
+  methods: {
+    buttonClicked() {
+      // eslint-disable-next-line
+      console.info('Adding stylesheet');
+      appendStylesheet(this.currentStylesheet);
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
   .append-stylesheet {
     &.container {
-      border: 1px solid slategrey;
       padding: 2rem;
     }
 
@@ -42,9 +50,10 @@ export default {
     .text-field {
       border: 1px solid lightslategrey;
       border-radius: 5px;
-      font-size: .9rem;
+      font-size: .85rem;
       margin: 1rem;
       padding: .5rem 1rem;
+      min-width: 20%;
     }
 
     .btn {

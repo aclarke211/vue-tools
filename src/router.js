@@ -23,7 +23,7 @@ const routes = [
   {
     path: '/components/utils/append-stylesheet',
     name: 'appendStylesheet',
-    component: () => import(/* webpackChunkName: "appendStylesheet" */ './views/utilsInfo/appendStylesheet.vue'),
+    component: () => import(/* webpackChunkName: "appendStylesheet" */ './views/utilsInfo/appendStylesheet/appendStylesheet.vue'),
   },
 ];
 
