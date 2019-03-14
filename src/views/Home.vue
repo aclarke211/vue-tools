@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <div class="component-list">
+    <h1 class="home__title">{{ homeTitle }}</h1>
+    <div class="category-list">
       <div class="category" v-for="(category, catKey) in categories" :key="catKey">
         <h1 class="category__title">{{ category.name }}</h1>
         <div class="subcategory" v-for="(subcategory, subKey) in category.subcategories"
@@ -30,6 +31,7 @@ export default {
   name: 'home',
   data: () => ({
     routes,
+    homeTitle: 'Vue Components',
     categories: [
       {
         name: 'Components',
@@ -61,3 +63,34 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.home {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  &__title {
+    align-self: center;
+  }
+
+  .category-list {
+    display: flex;
+    flex-wrap: wrap;
+    // border: 1px solid lightslategrey;
+    border-radius: .3rem;
+    padding: 0 1rem;
+    justify-content: space-around;
+  }
+
+  .category {
+    margin: 1rem;
+    flex: 0 0 100%;
+    box-sizing: border-box;
+
+    @media screen and (min-width: 767px) {
+      flex: 0 0 46%;
+    }
+  }
+}
+</style>
