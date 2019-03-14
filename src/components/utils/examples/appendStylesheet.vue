@@ -7,6 +7,9 @@
     <button :class="['btn', 'add-styles', className]" @click="addStylesheet()">
       {{ addStylesBtn.text }}
     </button>
+    <button :class="['btn', 'remove-appended-styles', className]" @click="removeAppendedStyles()">
+      {{ removeAppendedStylesBtn.text }}
+    </button>
     <button :class="['btn', 'remove-all-styles', className]" @click="removeStyles()">
       {{ removeAllStylesBtn.text }}
     </button>
@@ -14,7 +17,10 @@
 </template>
 
 <script>
-import { appendStylesheet, removeAllStylesheets } from '@/components/utils/appendStylesheet';
+import { appendStylesheet,
+  removeAllStylesheets,
+  removeAppendedStylesheets,
+} from '@/components/utils/appendStylesheet';
 
 export default {
   name: 'appendStylesheet',
@@ -27,14 +33,21 @@ export default {
     addStylesBtn: {
       text: 'ADD STYLESHEET',
     },
+    removeAppendedStylesBtn: {
+      text: 'REMOVE APPENDED STYLESHEETS',
+    },
     removeAllStylesBtn: {
-      text: 'REMOVE STYLESHEETS',
+      text: 'REMOVE ALL STYLESHEETS',
     },
   }),
 
   methods: {
     addStylesheet() {
       appendStylesheet(this.currentStylesheet);
+    },
+
+    removeAppendedStyles() {
+      removeAppendedStylesheets();
     },
 
     removeStyles() {
