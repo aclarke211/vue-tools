@@ -31,7 +31,7 @@ export default {
     currentStylesheet: 'https://www.jdsports.co.uk/skins/jdsports-desktop/public/dist/app.css?d7e6aa"',
     stylesheetInputPlaceholder: 'Add the path to an external stylesheet.',
     addStylesBtn: {
-      text: 'ADD STYLESHEET',
+      text: 'APPEND STYLESHEET',
     },
     removeAppendedStylesBtn: {
       text: 'REMOVE APPENDED STYLESHEETS',
