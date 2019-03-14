@@ -105,8 +105,22 @@ export default {
       }
     }
 
-    .add-styles {
+    .remove-appended-styles {
+      $btnColor: sandybrown;
 
+      background: $btnColor;
+      &:hover {
+        background: lighten($btnColor, 6%);
+      }
+    }
+
+    .remove-all-styles {
+      $btnColor: crimson;
+
+      background: $btnColor;
+      &:hover {
+        background: lighten($btnColor, 6%);
+      }
     }
   }
 </style>
