@@ -13,8 +13,6 @@ export function appendStylesheet(stylesPath) {
 }
 
 export function removeAppendedStylesheets() {
-  // eslint-disable-next-line
-  console.info('pressed');
   const sheets = document.querySelectorAll(`.${stylesheetsClassName}`);
 
   sheets.forEach((sheet) => {
