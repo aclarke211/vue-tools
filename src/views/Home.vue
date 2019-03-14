@@ -106,6 +106,7 @@ export default {
     }
 
     &__title {
+      color: darkslategrey;
       font-size: 2rem;
       margin: .5rem;
       padding: 0;
@@ -114,6 +115,7 @@ export default {
 
   .subcategory {
     &__title {
+      color: slategrey;
       font-size: 1.5rem;
       margin: .5rem;
       padding: 0;
@@ -131,13 +133,13 @@ export default {
     }
 
     &__link {
-      $linkColor: steelblue;
+      $linkColor: cornflowerblue;
       $hoverLinkTextColor: white;
 
       font-size: 1.1rem;
       color: $linkColor;
       text-decoration: none;
-      padding: .5rem 1.25rem;
+      padding: .75rem 2rem;
       border-radius: .25rem;
       border: 1px solid $linkColor;
       transition: all .5s;
