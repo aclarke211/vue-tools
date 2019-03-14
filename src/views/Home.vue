@@ -10,7 +10,7 @@
           <ul class="subcategory__routes">
             <li
               class="subcategory__route"
-              v-for="route in getRoutes(subcategory.pathid)"
+              v-for="route in getRoutes(category.name, subcategory.name)"
               :key="route.path">
               <router-link
                 :to="route.path">
@@ -38,7 +38,14 @@ export default {
         subcategories: [
           {
             name: 'General',
-            pathid: '/components/general',
+          },
+        ],
+      },
+      {
+        name: 'Modules',
+        subcategories: [
+          {
+            name: 'General',
           },
         ],
       },
@@ -47,7 +54,6 @@ export default {
         subcategories: [
           {
             name: 'General',
-            pathid: '/components/utils',
           },
         ],
       },
@@ -57,8 +63,8 @@ export default {
     formattedName(name) {
       return (name.charAt(0).toUpperCase() + name.slice(1)).match(/[A-Z][a-z]+|[0-9]+/g).join(' ');
     },
-    getRoutes(pathid) {
-      return routes.filter(routeName => routeName.path.includes(pathid));
+    getRoutes(catName, subCatName) {
+      return routes.filter(routeName => routeName.path.includes(`/${catName.toLowerCase().replace(' ', '-')}/${subCatName.toLowerCase().replace(' ', '-')}/`));
     },
   },
 };
@@ -89,7 +95,7 @@ export default {
     box-sizing: border-box;
 
     @media screen and (min-width: 767px) {
-      flex: 0 0 46%;
+      flex: 0 0 30%;
     }
   }
 }
