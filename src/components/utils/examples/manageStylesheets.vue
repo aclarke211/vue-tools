@@ -29,7 +29,7 @@ export default {
     className: 'manage-stylesheets',
     title: 'Manage Stylesheets',
     description: 'Dynamically add and remove stylesheets after a page has been loaded.',
-    currentStylesheet: 'https://www.jdsports.co.uk/skins/jdsports-desktop/public/dist/app.css?d7e6aa"',
+    currentStylesheet: 'https://www.jdsports.co.uk/skins/jdsports-desktop/public/dist/app.css?d7e6aa',
     stylesheetInputPlaceholder: 'Add the path to an external stylesheet.',
     addStylesBtn: {
       text: 'APPEND STYLESHEET',
