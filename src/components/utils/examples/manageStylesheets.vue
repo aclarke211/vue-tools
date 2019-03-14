@@ -17,17 +17,18 @@
 </template>
 
 <script>
-import { appendStylesheet,
-  removeAllStylesheets,
+import {
+  appendStylesheet,
   removeAppendedStylesheets,
-} from '@/components/utils/appendStylesheet';
+  removeAllStylesheets,
+} from '@/components/utils/manageStylesheets';
 
 export default {
-  name: 'appendStylesheet',
+  name: 'manageStylesheets',
   data: () => ({
-    className: 'append-stylesheet',
-    title: 'Append Stylesheet',
-    description: 'Dynamically add a stylesheet after a page has been loaded.',
+    className: 'manage-stylesheets',
+    title: 'Manage Stylesheets',
+    description: 'Dynamically add and remove stylesheets after a page has been loaded.',
     currentStylesheet: 'https://www.jdsports.co.uk/skins/jdsports-desktop/public/dist/app.css?d7e6aa"',
     stylesheetInputPlaceholder: 'Add the path to an external stylesheet.',
     addStylesBtn: {
@@ -58,7 +59,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .append-stylesheet {
+  .manage-stylesheets {
     &.container {
       padding: 2rem;
     }

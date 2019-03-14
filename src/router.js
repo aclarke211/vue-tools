@@ -21,9 +21,9 @@ const routes = [
   //   component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
   // },
   {
-    path: '/components/utils/append-stylesheet',
-    name: 'appendStylesheet',
-    component: () => import(/* webpackChunkName: "appendStylesheet" */ './components/utils/examples/appendStylesheet.vue'),
+    path: '/components/utils/manage-stylesheets',
+    name: 'manageStylesheets',
+    component: () => import(/* webpackChunkName: "manageStylesheets" */ './components/utils/examples/manageStylesheets.vue'),
   },
 ];
 
