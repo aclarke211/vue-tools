@@ -2,6 +2,13 @@
 export function appendStylesheet(stylesPath) {
   // eslint-disable-next-line
   console.log(stylesPath);
+  const link = document.createElement('link');
+
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = stylesPath;
+
+  document.head.appendChild(link);
 }
 
 export function addStyles() {

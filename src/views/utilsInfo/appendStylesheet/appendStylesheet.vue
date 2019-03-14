@@ -17,7 +17,7 @@ export default {
     className: 'append-stylesheet',
     title: 'Append Stylesheet',
     description: 'Dynamically add a stylesheet after a page has been loaded.',
-    currentStylesheet: '@/views/utilsInfo/appendStylesheet/exampleStylesheet.css',
+    currentStylesheet: 'https://www.jdsports.co.uk/skins/jdsports-desktop/public/dist/app.css?d7e6aa"',
     currentStylesheetPlaceholder: '',
     btnText: 'ADD STYLESHEET',
   }),

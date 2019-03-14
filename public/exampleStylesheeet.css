@@ -1,0 +1,8 @@
+body {
+  border: 5px solid blue;
+  padding: 2rem;
+}
+
+.append-stylesheet .title {
+  color: green;
+}
