@@ -4,7 +4,9 @@
     <p :class="['description', 'text', className]">{{ description }}</p>
     <input :class="['text-field', className]" type="text"
       placeholder="Add a stylesheet" v-model="currentStylesheet">
-    <button :class="['btn', 'add-styles', className]" @click="buttonClicked()">{{ btnText }}</button>
+    <button :class="['btn', 'add-styles', className]" @click="addStylesheet()">
+      {{ btnText }}
+    </button>
   </div>
 </template>
 
@@ -23,9 +25,7 @@ export default {
   }),
 
   methods: {
-    buttonClicked() {
-      // eslint-disable-next-line
-      console.info('Adding stylesheet');
+    addStylesheet() {
       appendStylesheet(this.currentStylesheet);
     },
   },
