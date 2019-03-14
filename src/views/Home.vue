@@ -81,7 +81,7 @@ export default {
     align-self: center;
     border-bottom: .3rem solid darkslategrey;
     font-size: 2.25rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 
   .category-list {
