@@ -33,7 +33,7 @@ export default {
 
     subtext: {
       type: String,
-      default: 'Subtext Module',
+      default: '',
     },
 
     textStyles: {
