@@ -1,12 +1,15 @@
 <template>
   <div
+    v-if="text || subtext"
     :class="['vc', className]">
     <p
+    v-if="text"
     class="text"
     :style="[initialTextStyles, textStyles]">
       {{ text }}
     </p>
     <p
+    v-if="subtext"
     class="subtext"
     :style="[initialSubtextStyles, subtextStyles]">
       {{ subtext}}
@@ -21,24 +24,6 @@ export default {
   data: () => ({
     className: 'text-module',
   }),
-
-  computed: {
-    initialTextStyles() {
-      return {
-        'font-size': '1.25rem',
-        margin: 0,
-        padding: 0,
-      };
-    },
-
-    initialSubtextStyles() {
-      return {
-        'font-size': '.85rem',
-        margin: 0,
-        padding: 0,
-      };
-    },
-  },
 
   props: {
     text: {
@@ -59,6 +44,26 @@ export default {
     subtextStyles: {
       type: Object,
       default: () => {},
+    },
+  },
+
+  computed: {
+    initialTextStyles() {
+      return {
+        'font-size': '1.25rem',
+        margin: 0,
+        padding: 0,
+        transition: 'all .5s',
+      };
+    },
+
+    initialSubtextStyles() {
+      return {
+        'font-size': '.85rem',
+        margin: 0,
+        padding: 0,
+        transition: 'all .5s',
+      };
     },
   },
 };
