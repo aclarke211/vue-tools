@@ -25,7 +25,7 @@ export default {
   computed: {
     initialTextStyles() {
       return {
-        'font-size': '1rem',
+        'font-size': '1.25rem',
         margin: 0,
         padding: 0,
       };
@@ -33,7 +33,7 @@ export default {
 
     initialSubtextStyles() {
       return {
-        'font-size': '.75rem',
+        'font-size': '.85rem',
         margin: 0,
         padding: 0,
       };
