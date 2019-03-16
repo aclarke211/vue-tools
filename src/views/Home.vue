@@ -40,6 +40,9 @@ export default {
           {
             name: 'General',
           },
+          {
+            name: 'Logic',
+          },
         ],
       },
       {
@@ -117,7 +120,7 @@ export default {
     &__title {
       color: slategrey;
       font-size: 1.5rem;
-      margin: .5rem;
+      margin: 1rem;
       padding: 0;
     }
 

@@ -15,6 +15,11 @@ const moduleRoutes = [
     name: 'textModule',
     component: () => import(/* webpackChunkName: "TextModule" */ './components/modules/TextModule.vue'),
   },
+  {
+    path: '/modules/logic/window-size',
+    name: 'windowSize',
+    component: () => import(/* webpackChunkName: "windowSize" */ './components/modules/logic/WindowSize.vue'),
+  },
 ];
 
 const componentRoutes = [
