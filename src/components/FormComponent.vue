@@ -3,7 +3,7 @@
     <WindowSize  :showValues="true"
       :calculateSizes="true" @dimensions="(event) => { this.windowDimensions = event }" />
     <h1>This is a Form Component.</h1>
-    <TextModule :text="'This is the text'" :textStyles="formTextStyles"  />
+    <TextModule :text="'This is the text'" :textStyles="dynamicTextStyles"  />
 
   </div>
 </template>
@@ -24,19 +24,29 @@ export default {
     WindowSize,
   },
 
-  computed: {
-    formTextStyles() {
-      if (this.windowDimensions.width <= 767) {
-        return {
-          color: 'red',
-          'font-size': '2rem',
-        };
-      }
+  props: {
+    formTextStyles: {
+      type: Object,
+      default: () => ({
+        color: 'crimson',
+        'font-size': '2rem',
+      }),
+    },
+    formTextStylesDesktop: {
+      type: Object,
+      default: () => ({
+        color: 'royalblue',
+        'font-size': '3rem',
+      }),
+    },
+  },
 
-      return {
-        color: 'blue',
-        'font-size': '1.5rem',
-      };
+  computed: {
+    dynamicTextStyles() {
+      if (this.windowDimensions.width <= 767) {
+        return this.formTextStyles;
+      }
+      return this.formTextStylesDesktop;
     },
   },
 };
