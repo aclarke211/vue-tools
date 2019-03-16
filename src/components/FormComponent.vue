@@ -36,7 +36,7 @@ export default {
         color: 'blue',
         'font-size': '1.5rem',
       };
-    }
-  }
+    },
+  },
 };
 </script>
