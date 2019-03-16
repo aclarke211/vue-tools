@@ -25,11 +25,18 @@ export default {
       type: Boolean,
       default: true,
     },
+
+    calculateSizes: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   mounted() {
-    window.addEventListener('resize', this.handleResize);
-    this.handleResize();
+    if (this.calculateSizes) {
+      window.addEventListener('resize', this.handleResize);
+      this.handleResize();
+    }
   },
 
   methods: {

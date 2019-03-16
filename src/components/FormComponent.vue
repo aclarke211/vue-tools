@@ -1,9 +1,10 @@
 <template>
   <div class="vc form">
+    <WindowSize  :showValues="true"
+      :calculateSizes="true" @dimensions="(event) => { this.windowDimensions = event }" />
     <h1>This is a Form Component.</h1>
     <TextModule :text="'This is the text'" :textStyles="formTextStyles"  />
 
-    <WindowSize  :showValues="true" @dimensions="(event) => { this.windowDimensions = event }" />
   </div>
 </template>
 
