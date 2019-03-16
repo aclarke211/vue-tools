@@ -37,6 +37,7 @@ export default {
       this.$nextTick(() => {
         this.dimensions.width = window.innerWidth;
         this.dimensions.height = window.innerHeight;
+        this.$emit('dimensions', this.dimensions);
       });
     },
   },
