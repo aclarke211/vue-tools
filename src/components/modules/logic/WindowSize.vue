@@ -1,9 +1,9 @@
 <template>
-  <div :class="`${className}__container`" v-if="!emitOnly">
+  <div :class="`${className}__container`" v-if="showValues">
     <h1 :class="`${className}__title`">Window Size Module</h1>
     <div :class="`${className}__info`">
-      <h2 :class="`${className}__value`">Window Width: {{ windowWidth }}</h2>
-      <h2 :class="`${className}__value`">Window Height: {{ windowHeight }}</h2>
+      <h2 :class="`${className}__value`">Window Width: {{ dimensions.width }}</h2>
+      <h2 :class="`${className}__value`">Window Height: {{ dimensions.height }}</h2>
     </div>
   </div>
 </template>
@@ -14,14 +14,16 @@ export default {
 
   data: () => ({
     className: 'window-size',
-    windowWidth: undefined,
-    windowHeight: undefined,
+    dimensions: {
+      width: undefined,
+      height: undefined,
+    },
   }),
 
   props: {
-    emitOnly: {
+    showValues: {
       type: Boolean,
-      default: false,
+      default: true,
     },
   },
 
@@ -33,8 +35,8 @@ export default {
   methods: {
     handleResize() {
       this.$nextTick(() => {
-        this.windowWidth = window.innerWidth;
-        this.windowHeight = window.innerHeight;
+        this.dimensions.width = window.innerWidth;
+        this.dimensions.height = window.innerHeight;
       });
     },
   },
