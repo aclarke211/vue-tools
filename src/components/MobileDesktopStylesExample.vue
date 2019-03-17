@@ -1,7 +1,7 @@
 <template>
   <div class="vc form">
     <WindowSize
-      :calculateSizes="false"
+      :calculateSizes="true"
       :showValues="false"
       @dimensions="(event) => { this.windowDimensions = event }"
     />
