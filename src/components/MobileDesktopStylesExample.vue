@@ -1,10 +1,10 @@
 <template>
   <div class="vc form">
-    <WindowSize  :showValues="true"
-      :calculateSizes="true" @dimensions="(event) => { this.windowDimensions = event }" />
-    <h1>This is a Form Component.</h1>
-    <TextModule :text="'This is the text'" :textStyles="dynamicTextStyles"  />
+    <h1>Mobile / Desktop Styles Example</h1>
+    <TextModule :text="'This is a Text Module'" :textStyles="dynamicTextStyles"  />
 
+    <WindowSize  :showValues="false"
+      :calculateSizes="true" @dimensions="(event) => { this.windowDimensions = event }" />
   </div>
 </template>
 

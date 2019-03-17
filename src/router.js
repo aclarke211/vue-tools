@@ -24,9 +24,9 @@ const moduleRoutes = [
 
 const componentRoutes = [
   {
-    path: '/components/general/form',
-    name: 'formComponent',
-    component: () => import(/* webpackChunkName: "FormComponent" */ './components/FormComponent.vue'),
+    path: '/components/general/mobile-desktop-styles-examples',
+    name: 'mobileDesktopStylesExample',
+    component: () => import(/* webpackChunkName: "MobileDesktopStylesExample" */ './components/MobileDesktopStylesExample.vue'),
   },
 ];
 
