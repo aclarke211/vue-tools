@@ -10,7 +10,7 @@
 
 <script>
 import TextModule from '@/components/modules/TextModule.vue';
-import WindowSize from '@/components/modules/logic/WindowSize.vue';
+import WindowSize from '@/components/modules/WindowSize.vue';
 
 export default {
   name: 'FormComponent',

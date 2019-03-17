@@ -18,7 +18,7 @@ const moduleRoutes = [
   {
     path: '/modules/logic/window-size',
     name: 'windowSize',
-    component: () => import(/* webpackChunkName: "windowSize" */ './components/modules/logic/WindowSize.vue'),
+    component: () => import(/* webpackChunkName: "windowSize" */ './components/modules/WindowSize.vue'),
   },
 ];
 
