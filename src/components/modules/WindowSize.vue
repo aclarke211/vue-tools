@@ -35,8 +35,8 @@ export default {
   mounted() {
     if (this.calculateSizes) {
       window.addEventListener('resize', this.handleResize);
-      this.handleResize();
     }
+    this.handleResize();
   },
 
   methods: {
