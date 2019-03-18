@@ -36,6 +36,11 @@ const utilRoutes = [
     name: 'manageStylesheets',
     component: () => import(/* webpackChunkName: "manageStylesheets" */ './components/utils/examples/manageStylesheets.vue'),
   },
+  {
+    path: '/utils/scripts/debounce-throttle',
+    name: 'debounceThrottle',
+    component: () => import(/* webpackChunkName: "debounceThrottle" */ './components/utils/examples/debounceThrottle.vue'),
+  },
 ];
 
 const routes = [...generalRoutes, ...moduleRoutes, ...componentRoutes, ...utilRoutes];

@@ -59,6 +59,9 @@ export default {
           {
             name: 'Styling',
           },
+          {
+            name: 'Scripts',
+          },
         ],
       },
     ],
