@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import debounceFunction from '@/components/utils/debounceThrottle';
+
 export default {
   name: 'WindowSize',
 
@@ -34,9 +36,9 @@ export default {
 
   mounted() {
     if (this.calculateSizes) {
-      window.addEventListener('resize', this.debounce(this.handleResize));
+      window.addEventListener('resize', debounceFunction(this.handleResize));
     }
-    this.debounce(this.handleResize);
+    this.handleResize();
   },
 
   methods: {
@@ -47,20 +49,10 @@ export default {
         this.$emit('dimensions', this.dimensions);
       });
     },
-
-    debounce(functionToLimit, delay = 300) {
-      let debounceThrottleTimer;
-      return () => {
-        // Reset the throttle timer when we call the debounce function
-        clearTimeout(debounceThrottleTimer);
-        // If the throttle timer resets before the delay time has passed, it will not run
-        debounceThrottleTimer = setTimeout(functionToLimit.bind(this), delay);
-      };
-    },
   },
 
   beforeDestroy() {
-    window.removeEventListener('resize', this.debounce(this.handleResize));
+    window.removeEventListener('resize', debounceFunction(this.handleResize));
   },
 };
 </script>

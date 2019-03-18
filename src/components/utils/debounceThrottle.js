@@ -1,4 +1,4 @@
-export default function debounceFunction(functionToLimit, delay = 300) {
+export default function debounceFunction(functionToLimit, delay = 200) {
   let debounceThrottleTimer;
   return () => {
     // Reset the throttle timer when we call the debounce function
