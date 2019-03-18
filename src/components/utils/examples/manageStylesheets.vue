@@ -1,5 +1,5 @@
 <template>
-  <div :class="['container', 'utils-info', className]">
+  <div :class="['container', 'util', className]">
     <h1 :class="['title', className]">{{ title }}</h1>
     <p :class="['description', 'text', className]">{{ description }}</p>
     <input :class="['text-field', className]" type="text"
