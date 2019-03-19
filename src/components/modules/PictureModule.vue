@@ -5,10 +5,11 @@
     v-if="images" >
     <!-- Picture element to switch between desktop and mobile images -->
     <picture class="aspect__container"
-      :style="applyAspectRatio"
+      :style="[mobileRatio, desktopRatio]"
     >
       <source
         :media="`(max-width: ${breakpoints.tablet})`"
+        :ref="'mobileImage'"
         :srcset="images.mobile"
         v-if="images.mobile" >
       <img
@@ -34,34 +35,30 @@ export default {
     images: {
       type: Object,
       default: () => ({
-        mobile: 'https://via.placeholder.com/640x800/d9efff/?text=Mobile',
-        desktop: 'https://via.placeholder.com/1160x600/ffe9b2/?text=Desktop',
+        mobile: 'https://via.placeholder.com/640x800/d9efff/?text=Mobile+Image',
+        desktop: 'https://via.placeholder.com/1160x600/ffe9b2/?text=Desktop+Image',
       }),
     },
 
     aspectRatio: {
       type: Object,
       default: () => ({
-        desktop: [1600, 900],
+        desktop: [1160, 600],
         mobile: [640, 800],
       }),
     },
   },
 
   computed: {
-    // initialCustomStyles() {
-    //   return {
-    //     'font-size': '1.25rem',
-    //     margin: 0,
-    //     padding: 0,
-    //     transition: 'all .5s',
-    //   };
-    // },
-
-    // 'padding-top': `${this.aspectRatio.mobile[1]} / ${this.aspectRatio.mobile[0]} * ${100}%`,
-    applyAspectRatio() {
+    mobileRatio() {
       return {
         'padding-top': `${this.aspectRatio.mobile[1] / this.aspectRatio.mobile[0] * 100}%`,
+      };
+    },
+
+    desktopRatio() {
+      return {
+        'padding-top': `${this.aspectRatio.desktop[1] / this.aspectRatio.desktop[0] * 100}%`,
       };
     },
   },
@@ -70,7 +67,6 @@ export default {
 
 <style lang="scss" scoped>
 .vc-picture {
-  border: 2px solid darkslategrey;
   margin: 2rem auto;
 
   .aspect__container {
@@ -79,10 +75,6 @@ export default {
     height: 0;
     overflow: hidden;
     position: relative;
-
-    @media screen and (min-width: 767px) {
-      padding-top: calc(600 / 1160 * 100%);
-    }
   }
 
   .vc-img {
