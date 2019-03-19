@@ -20,6 +20,11 @@ const moduleRoutes = [
     name: 'windowSize',
     component: () => import(/* webpackChunkName: "windowSize" */ './components/modules/WindowSize.vue'),
   },
+  {
+    path: '/modules/images/picture',
+    name: 'pictureModule',
+    component: () => import(/* webpackChunkName: "windowSize" */ './components/modules/PictureModule.vue'),
+  },
 ];
 
 const componentRoutes = [

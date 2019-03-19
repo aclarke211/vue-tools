@@ -43,6 +43,9 @@ export default {
           {
             name: 'Logic',
           },
+          {
+            name: 'Images',
+          },
         ],
       },
       {
