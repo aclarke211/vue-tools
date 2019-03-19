@@ -5,7 +5,7 @@
     v-if="images" >
     <!-- Picture element to switch between desktop and mobile images -->
     <picture class="aspect__container"
-      :style="[mobileRatio, desktopRatio]"
+      :style="[desktopRatio, mobileRatio]"
     >
       <source
         :media="`(max-width: ${breakpoints.tablet})`"
