@@ -1,36 +1,22 @@
 <template>
   <div :class="className">
-     <h1 :class="`${className}__title`">{{ titleText }}</h1>
-    <!-- <div class="category-list">
-      <div class="category" v-for="(category, catKey) in categories" :key="catKey">
-        <h1 class="category__title">{{ category.name }}</h1>
-        <div class="subcategory" v-for="(subcategory, subKey) in category.subcategories"
-        :key="subKey">
-          <h2 class="subcategory__title">{{ subcategory.name }}</h2>
-          <ul class="subcategory__routes">
-            <li
-              class="subcategory__route"
-              v-for="route in getRoutes(category.name, subcategory.name)"
-              :key="route.path">
-              <router-link
-                class="subcategory__link"
-                :to="route.path">
-                {{ formattedName(route.name) }}
-              </router-link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div> -->
+    <h1 :class="`${className}__title`">{{ titleText }}</h1>
 
-    <div class="modules__container type__container">
+    <div class="tool-types">
       <div
-        class="tool"
-        v-for="(singleModule, moduleKey) in allModules"
-        :key="moduleKey" >
-        {{ singleModule.name }}
+        class="type"
+        v-for="(type, typeKey) in toolTypes"
+        :key="typeKey">
+          <h2 class="type__title">{{ type.name }}</h2>
+          <!-- <div
+            :class="['category', tool.name]"
+            v-for="(category, toolKey) in category.list"
+            :key="toolKey">
+
+          </div> -->
       </div>
     </div>
+
   </div>
 </template>
 
@@ -46,8 +32,13 @@ export default {
   }),
 
   computed: {
-    allModules() {
-      return modulesList;
+    toolTypes() {
+      return [
+        {
+          name: 'Modules',
+          list: modulesList,
+        },
+      ];
     },
   },
 
@@ -65,84 +56,4 @@ export default {
 </script>
 
 <style lang="scss">
-// .home {
-//   display: flex;
-//   flex-direction: column;
-//   flex-wrap: wrap;
-
-//   &__title {
-//     align-self: center;
-//     border-bottom: .3rem solid darkslategrey;
-//     font-size: 2.25rem;
-//     margin-bottom: 3rem;
-//   }
-
-//   .category-list {
-//     display: flex;
-//     flex-wrap: wrap;
-//     border-radius: .3rem;
-//     padding: 0 1rem;
-//     justify-content: center;
-//   }
-
-//   .category {
-//     margin: 1rem;
-//     flex: 0 0 100%;
-//     box-sizing: border-box;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     text-align: center;
-
-//     @media screen and (min-width: 767px) {
-//       flex: 0 0 30%;
-//     }
-
-//     &__title {
-//       color: darkslategrey;
-//       font-size: 2rem;
-//       margin: .5rem;
-//       padding: 0;
-//     }
-//   }
-
-//   .subcategory {
-//     &__title {
-//       color: slategrey;
-//       font-size: 1.5rem;
-//       margin: 1rem;
-//       padding: 0;
-//     }
-
-//     &__routes {
-//       margin: 1rem;
-//       padding: 0;
-//     }
-
-//     &__route {
-//       list-style-type: none;
-//       margin: 2rem;
-//       padding: 0;
-//     }
-
-//     &__link {
-//       $linkColor: cornflowerblue;
-//       $hoverLinkTextColor: white;
-
-//       font-size: 1.1rem;
-//       color: $linkColor;
-//       text-decoration: none;
-//       padding: .75rem 2rem;
-//       border-radius: .25rem;
-//       border: 1px solid $linkColor;
-//       transition: all .5s;
-//       white-space: nowrap;
-
-//       &:hover {
-//         background-color: $linkColor;
-//         color: $hoverLinkTextColor;
-//       }
-//     }
-//   }
-// }
 </style>
