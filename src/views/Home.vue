@@ -22,17 +22,27 @@
         </div>
       </div>
     </div> -->
+
+    <div class="modules__container type__container">
+      <div
+        v-for="{vtModule, moduleKey} in allModules"
+        :key="moduleKey" >
+        {{ vtModule }}
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 // import { routes } from '../router';
+import modulesList from '../modules/base/modules-list';
 
 export default {
   name: 'home',
   data: () => ({
     className: 'home',
     titleText: 'Vue Components',
+    allModules: {},
     // routes,
     // categories: [
     //   {
@@ -79,6 +89,10 @@ export default {
     //   return routes.filter(routeName => routeName.path.includes(`/${catName.toLowerCase()
     //    .replace(' ', '-')}/${subCatName.toLowerCase().replace(' ', '-')}/`));
     // },
+  },
+
+  mounted() {
+    this.allModules = modulesList;
   },
 };
 </script>

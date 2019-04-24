@@ -1,0 +1,35 @@
+<template>
+  <div :class="className">
+     <h1 :class="`${className}__title`">{{ titleText }}</h1>
+     <h2>{{ routeModuleName }}</h2>
+  </div>
+</template>
+
+<script>
+
+export default {
+  name: 'ModuleShowcase',
+  data: () => ({
+    className: 'module-showcase',
+    titleText: 'Module Showcase',
+  }),
+
+  computed: () => ({
+    routeModuleName() {
+      return this.$route.params.moduleName;
+    },
+  }),
+};
+</script>
+
+<style lang="scss">
+  .module-showcase {
+    border: solid seagreen;
+
+    &__title {
+      font-size: 2.25rem;
+      color: blue;
+      text-decoration: underline;
+    }
+  }
+</style>
