@@ -42,7 +42,7 @@ export default {
   name: 'home',
   data: () => ({
     className: 'home',
-    titleText: 'Vue Components',
+    titleText: 'Vue Tools',
   }),
 
   computed: {
