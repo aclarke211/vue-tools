@@ -5,15 +5,15 @@
     <div class="tool-types">
       <div
         class="type"
-        v-for="(type, typeKey) in toolTypes"
+        v-for="(toolType, typeKey) in toolTypes"
         :key="typeKey">
-          <h2 class="type__title">{{ type.name }}</h2>
-          <!-- <div
-            :class="['category', tool.name]"
-            v-for="(category, toolKey) in category.list"
-            :key="toolKey">
-
-          </div> -->
+          <h2 class="type__title">{{ toolType.name }}</h2>
+          <div
+            :class="['category']"
+            v-for="(category, catKey) in getCategories(toolType)"
+            :key="catKey">
+             <h3 class="category__title">{{ category }}</h3>
+          </div>
       </div>
     </div>
 
@@ -51,6 +51,14 @@ export default {
     //   return routes.filter(routeName => routeName.path.includes(`/${catName.toLowerCase()
     //    .replace(' ', '-')}/${subCatName.toLowerCase().replace(' ', '-')}/`));
     // },
+    getCategories(toolType) {
+      const categories = toolType.list.map(category => category.category);
+
+      // eslint-disable-next-line
+      console.log(categories);
+
+      return categories;
+    },
   },
 };
 </script>
