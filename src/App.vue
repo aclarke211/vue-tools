@@ -11,21 +11,6 @@
   src: url('../src/assets/fonts/heebo-medium.ttf');
 }
 
-// @font-face {
-//   font-family: 'didact-gothic';
-//   src: url('../src/assets/fonts/didact-gothic-regular.ttf');
-// }
-
-// @font-face {
-//   font-family: 'abeezee';
-//   src: url('../src/assets/fonts/abeezee-regular.ttf');
-// }
-
-// @font-face {
-//   font-family: 'lato';
-//   src: url('../src/assets/fonts/lato.ttf');
-// }
-
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
