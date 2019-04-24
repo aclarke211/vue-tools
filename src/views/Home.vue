@@ -25,9 +25,10 @@
 
     <div class="modules__container type__container">
       <div
-        v-for="{vtModule, moduleKey} in allModules"
+        class="tool"
+        v-for="(singleModule, moduleKey) in allModules"
         :key="moduleKey" >
-        {{ vtModule }}
+        {{ singleModule.name }}
       </div>
     </div>
   </div>
@@ -42,44 +43,14 @@ export default {
   data: () => ({
     className: 'home',
     titleText: 'Vue Components',
-    allModules: {},
-    // routes,
-    // categories: [
-    //   {
-    //     name: 'Modules',
-    //     subcategories: [
-    //       {
-    //         name: 'General',
-    //       },
-    //       {
-    //         name: 'Logic',
-    //       },
-    //       {
-    //         name: 'Images',
-    //       },
-    //     ],
-    //   },
-    //   {
-    //     name: 'Components',
-    //     subcategories: [
-    //       {
-    //         name: 'General',
-    //       },
-    //     ],
-    //   },
-    //   {
-    //     name: 'Utils',
-    //     subcategories: [
-    //       {
-    //         name: 'Styling',
-    //       },
-    //       {
-    //         name: 'Scripts',
-    //       },
-    //     ],
-    //   },
-    // ],
   }),
+
+  computed: {
+    allModules() {
+      return modulesList;
+    },
+  },
+
   methods: {
     // formattedName(name) {
     //   return (name.charAt(0).toUpperCase() +
@@ -89,10 +60,6 @@ export default {
     //   return routes.filter(routeName => routeName.path.includes(`/${catName.toLowerCase()
     //    .replace(' ', '-')}/${subCatName.toLowerCase().replace(' ', '-')}/`));
     // },
-  },
-
-  mounted() {
-    this.allModules = modulesList;
   },
 };
 </script>
