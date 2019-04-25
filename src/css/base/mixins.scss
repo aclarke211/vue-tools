@@ -67,6 +67,7 @@
 @mixin hover-invert($textColour, $bgColour) {
   background-color: $bgColour;
   color: $textColour;
+  cursor: pointer;
 
   &:hover {
     background-color: $textColour;
