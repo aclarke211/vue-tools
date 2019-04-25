@@ -5,4 +5,10 @@ export default {
       srcFile: () => import('../TextModule.vue'),
     },
   ],
+  picture: [
+    {
+      name: 'PictureModule',
+      srcFile: () => import('../PictureModule.vue'),
+    },
+  ],
 };
