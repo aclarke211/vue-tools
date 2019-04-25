@@ -20,7 +20,7 @@
               <div
                 class="btn tool-btn"
                 @click="goToNewRoute(toolType, category, toolKey)">
-                {{ tool.name }}
+                {{ formattedName(tool.name) }}
               </div>
              </div>
           </div>
