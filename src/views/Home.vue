@@ -9,10 +9,16 @@
         :key="typeKey">
           <h2 class="type__title">{{ toolType.name }}</h2>
           <div
-            :class="['category']"
-            v-for="(category, catKey) in getCategories(toolType)"
-            :key="catKey">
-             <h3 class="category__title">{{ category }}</h3>
+            :class="['category', category]"
+            v-for="(category, categoryKey) in toolType.list"
+            :key="categoryKey">
+             <h3 class="category__title">{{ formattedName(categoryKey) }}</h3>
+             <div
+              :class="['tool', tool]"
+              v-for="(tool, toolKey) in category"
+              :key="toolKey">
+                {{ tool.name }}
+             </div>
           </div>
       </div>
     </div>
@@ -43,22 +49,22 @@ export default {
   },
 
   methods: {
-    // formattedName(name) {
-    //   return (name.charAt(0).toUpperCase() +
-    //     name.slice(1)).match(/[A-Z][a-z]+|[0-9]+/g).join(' ');
-    // },
+    formattedName(name) {
+      return (name.charAt(0).toUpperCase() +
+        name.slice(1)).match(/[A-Z][a-z]+|[0-9]+/g).join(' ');
+    },
     // getRoutes(catName, subCatName) {
     //   return routes.filter(routeName => routeName.path.includes(`/${catName.toLowerCase()
     //    .replace(' ', '-')}/${subCatName.toLowerCase().replace(' ', '-')}/`));
     // },
-    getCategories(toolType) {
-      const categories = toolType.list.map(category => category.category);
+    // getCategories(toolType) {
+    //   const categories = toolType.list.map(category => category.category);
 
-      // eslint-disable-next-line
-      console.log(categories);
+    //   // eslint-disable-next-line
+    //   console.log(categories);
 
-      return categories;
-    },
+    //   return categories;
+    // },
   },
 };
 </script>
