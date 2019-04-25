@@ -1,7 +1,7 @@
 <template>
   <div :class="className">
      <h1 :class="`${className}__title`">{{ titleText }}</h1>
-     <h2>{{ routeModuleName }}</h2>
+     <h2>This is the {{ routeModuleName }}</h2>
   </div>
 </template>
 
@@ -14,11 +14,11 @@ export default {
     titleText: 'Module Showcase',
   }),
 
-  computed: () => ({
+  computed: {
     routeModuleName() {
       return this.$route.params.moduleName;
     },
-  }),
+  },
 };
 </script>
 

@@ -19,7 +19,7 @@
               :key="toolKey">
               <div
                 class="btn tool-btn"
-                @click="goToNewRoute()">
+                @click="goToNewRoute(toolType, category, toolKey)">
                 {{ tool.name }}
               </div>
              </div>
@@ -57,9 +57,8 @@ export default {
         name.slice(1)).match(/[A-Z][a-z]+|[0-9]+/g).join(' ');
     },
 
-    goToNewRoute() {
-      // eslint-disable-next-line
-      alert('Tool Clicked');
+    goToNewRoute(toolType, category, toolKey) {
+      this.$router.push({ name: `${toolType.name.toLowerCase()}Showcase`, params: { moduleName: category[toolKey].name } });
     },
 
     // getUniqueCategories(toolType) {

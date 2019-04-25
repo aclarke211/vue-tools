@@ -1,7 +1,7 @@
 export default {
   text: [
     {
-      name: 'Text Module',
+      name: 'TextModule',
       srcFile: () => import('../TextModule.vue'),
     },
   ],
