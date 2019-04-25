@@ -17,7 +17,11 @@
               :class="['tool', tool]"
               v-for="(tool, toolKey) in category"
               :key="toolKey">
+              <div
+                class="btn tool-btn"
+                @click="goToNewRoute()">
                 {{ tool.name }}
+              </div>
              </div>
           </div>
       </div>
@@ -27,7 +31,6 @@
 </template>
 
 <script>
-// import { routes } from '../router';
 import modulesList from '../modules/base/modules-list';
 
 export default {
@@ -53,11 +56,13 @@ export default {
       return (name.charAt(0).toUpperCase() +
         name.slice(1)).match(/[A-Z][a-z]+|[0-9]+/g).join(' ');
     },
-    // getRoutes(catName, subCatName) {
-    //   return routes.filter(routeName => routeName.path.includes(`/${catName.toLowerCase()
-    //    .replace(' ', '-')}/${subCatName.toLowerCase().replace(' ', '-')}/`));
-    // },
-    // getCategories(toolType) {
+
+    goToNewRoute() {
+      // eslint-disable-next-line
+      alert('Tool Clicked');
+    },
+
+    // getUniqueCategories(toolType) {
     //   const categories = toolType.list.map(category => category.category);
 
     //   // eslint-disable-next-line
@@ -70,4 +75,62 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../css/base/mixins.scss';
+
+  .home {
+    &__title {
+      font-size: 2.25rem;
+      text-align: center;
+      margin: 1rem;
+    }
+
+    .tool-types {
+      display: flex;
+      margin: 1rem;
+      flex-direction: column;
+
+      @include tablet {
+        flex-direction: row;
+      }
+
+      .type {
+        @include flexbox;
+        flex-direction: column;
+        flex: 0 0 33.33%;
+        margin: .5rem;
+        padding: .5rem;
+
+        &__title {
+          margin: 0;
+          padding: 0;
+          font-size: 1.75rem;
+          color: darkslategrey;
+        }
+
+        .category {
+          @include flexbox;
+          flex-direction: column;
+          padding: .5rem;
+          margin: .5rem;
+
+          &__title {
+            margin: 0;
+            padding: 0;
+            font-size: 1.25rem;
+            color: slategrey;
+          }
+
+          .tool {
+            &-btn {
+              @include hover-invert(cornflowerblue, white);
+              border: 2px solid cornflowerblue;
+              margin: 1rem;
+              padding: .75rem 2rem;
+              transition: all .5s;
+            }
+          }
+        }
+      }
+    }
+  }
 </style>
