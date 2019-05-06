@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import TextModule from '@/components/modules/TextModule.vue';
-import WindowSize from '@/components/modules/WindowSize.vue';
+import TextModule from '@/modules/TextModule.vue';
+import WindowSize from '@/modules/WindowSize.vue';
 
 export default {
   name: 'FormComponent',

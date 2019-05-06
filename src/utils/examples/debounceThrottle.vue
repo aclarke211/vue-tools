@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import debounceFunction from '@/components/utils/debounceThrottle';
+import debounceFunction from '@/utils/debounceThrottle';
 
 export default {
   name: 'debounceThrottle',
