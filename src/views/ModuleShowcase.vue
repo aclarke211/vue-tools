@@ -4,7 +4,7 @@
      <h2>This is the {{ routeModuleName }}</h2>
 
      <component
-      :is="componentName" />
+      :is="componentImport" />
   </div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
       return this.$route.params.moduleName;
     },
 
-    componentName() {
+    componentImport() {
       return modulesList.text[0].srcFile;
     },
   },
