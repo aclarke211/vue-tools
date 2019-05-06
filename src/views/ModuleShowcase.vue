@@ -16,6 +16,13 @@ export default {
 
   components: modulesList,
 
+  props: {
+    componentImport: {
+      type: Function,
+      default: modulesList.text[0].srcFile,
+    },
+  },
+
   data: () => ({
     className: 'module-showcase',
     titleText: 'Module Showcase',
@@ -24,10 +31,6 @@ export default {
   computed: {
     routeModuleName() {
       return this.$route.params.moduleName;
-    },
-
-    componentImport() {
-      return modulesList.text[0].srcFile;
     },
   },
 };
