@@ -4,22 +4,18 @@
      <h2>This is the {{ routeModuleName }}</h2>
 
      <component
-      :is="componentImport" />
+      :is="moduleImport" />
   </div>
 </template>
 
 <script>
-import modulesList from '../modules/base/modules-list';
-
 export default {
   name: 'ModuleShowcase',
 
-  components: modulesList,
-
   props: {
-    componentImport: {
+    moduleImport: {
       type: Function,
-      default: modulesList.text[0].srcFile,
+      default: () => ({}),
     },
   },
 

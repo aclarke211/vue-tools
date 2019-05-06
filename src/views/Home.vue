@@ -58,7 +58,12 @@ export default {
     },
 
     goToNewRoute(toolType, category, toolKey) {
-      this.$router.push({ name: `${toolType.name.toLowerCase()}Showcase`, params: { moduleName: category[toolKey].name } });
+      this.$router.push({ name: `${toolType.name.toLowerCase()}Showcase`,
+        params: {
+          moduleName: category[toolKey].name,
+          moduleImport: category[toolKey].srcFile,
+        },
+      });
     },
 
     // getUniqueCategories(toolType) {
