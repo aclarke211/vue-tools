@@ -1,29 +1,33 @@
 <template>
   <div class="content">
     <div
-      v-for="(contentObj, key) in content"
-      v-if="disableLinks"
-      :key="key"
-      class="contentObj._identifier"
-      @mouseenter.stop="livePreviewHoverEnter(contentObj._identifier)"
-      @mouseleave.stop="livePreviewHoverLeave(contentObj._identifier)"
-      @click.stop.prevent="livePreviewClick(contentObj._identifier)"
-    >
+      v-if="disableLinks" >
+      <div
+        v-for="(contentObj, key) in content"
+        :class="contentObj._identifier"
+        :key="key"
+        @mouseenter.stop="livePreviewHoverEnter(contentObj._identifier)"
+        @mouseleave.stop="livePreviewHoverLeave(contentObj._identifier)"
+        @click.stop.prevent="livePreviewClick(contentObj._identifier)"
+      >
+        <DynamicComponent
+          :component-name="contentObj._component"
+          :class="[`t-${contentObj._component.toLowerCase()}`, contentObj._identifier]"
+          :component-props="contentObj.content"
+        />
+      </div>
+    </div>
+
+    <div
+      v-if="!disableLinks" >
       <DynamicComponent
+        v-for="(contentObj, key) in content"
         :component-name="contentObj._component"
+        :key="key"
         :class="[`t-${contentObj._component.toLowerCase()}`, contentObj._identifier]"
         :component-props="contentObj.content"
       />
     </div>
-
-    <DynamicComponent
-      v-for="(contentObj, key) in content"
-      v-if="!disableLinks"
-      :component-name="contentObj._component"
-      :key="key"
-      :class="[`t-${contentObj._component.toLowerCase()}`, contentObj._identifier]"
-      :component-props="contentObj.content"
-    />
   </div>
 </template>
 
