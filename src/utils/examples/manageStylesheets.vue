@@ -21,7 +21,7 @@ import {
   appendStylesheet,
   removeAppendedStylesheets,
   removeAllStylesheets,
-} from '@/components/utils/manageStylesheets';
+} from '@/utils/manageStylesheets';
 
 export default {
   name: 'manageStylesheets',

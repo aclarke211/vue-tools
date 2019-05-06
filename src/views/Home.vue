@@ -53,8 +53,8 @@ export default {
 
   methods: {
     formattedName(name) {
-      return (name.charAt(0).toUpperCase() +
-        name.slice(1)).match(/[A-Z][a-z]+|[0-9]+/g).join(' ');
+      return (name.charAt(0).toUpperCase()
+        + name.slice(1)).match(/[A-Z][a-z]+|[0-9]+/g).join(' ');
     },
 
     goToNewRoute(toolType, category, toolKey) {
