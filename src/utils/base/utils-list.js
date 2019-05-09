@@ -4,7 +4,7 @@ export default {
       name: 'debounceThrottle',
       srcFile: () => import('../debounceThrottle'),
       additionalTemplates: [
-        '<h2>The debounceThrottle can be used for...</h2>'
+        '<h2>The debounceThrottle can be used for...</h2>',
       ],
       additionalScripts: [
         // eslint-disable-next-line
