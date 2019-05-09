@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'ModuleShowcase',
+  name: 'ModulesShowcase',
 
   props: {
     importRef: {
