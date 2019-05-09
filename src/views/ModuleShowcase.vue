@@ -4,7 +4,7 @@
      <h2>This is the {{ routeModuleName }}</h2>
 
      <component
-      :is="moduleImport" />
+      :is="importRef" />
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
   name: 'ModuleShowcase',
 
   props: {
-    moduleImport: {
+    importRef: {
       type: Function,
       default: () => ({}),
     },
@@ -26,7 +26,7 @@ export default {
 
   computed: {
     routeModuleName() {
-      return this.$route.params.moduleName;
+      return this.$route.params.name;
     },
   },
 };

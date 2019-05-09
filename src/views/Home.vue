@@ -32,6 +32,7 @@
 
 <script>
 import modulesList from '../modules/base/modules-list';
+import utilsList from '../utils/base/utils-list';
 
 export default {
   name: 'home',
@@ -47,6 +48,10 @@ export default {
           name: 'Modules',
           list: modulesList,
         },
+        {
+          name: 'Utils',
+          list: utilsList,
+        },
       ];
     },
   },
@@ -61,20 +66,13 @@ export default {
       this.$router.push({
         name: `${toolType.name.toLowerCase()}Showcase`,
         params: {
-          moduleName: category[toolKey].name,
-          moduleImport: category[toolKey].srcFile,
+          name: category[toolKey].name || null,
+          importRef: category[toolKey].srcFile || null,
+          additionalTemplates: category[toolKey].additionalTemplates || null,
+          additionalScripts: category[toolKey].additionalScripts || null,
         },
       });
     },
-
-    // getUniqueCategories(toolType) {
-    //   const categories = toolType.list.map(category => category.category);
-
-    //   // eslint-disable-next-line
-    //   console.log(categories);
-
-    //   return categories;
-    // },
   },
 };
 </script>
