@@ -31,11 +31,11 @@
   position: absolute;
   top: 0;
 
-  @if $direction=='left' {
+  @if $direction == 'left' {
     left: 0;
   }
 
-  @else if $direction=='right' {
+  @else if $direction == 'right' {
     right: 0;
   }
 }
