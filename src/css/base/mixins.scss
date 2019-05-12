@@ -64,14 +64,14 @@
 }
 
 // Invert the colours of an element on hover
-@mixin hover-invert($textColour, $bgColour) {
-  background-color: $bgColour;
-  color: $textColour;
+@mixin hover-invert($primaryColor, $secondaryColor) {
+  background-color: $secondaryColor;
+  color: $primaryColor;
   cursor: pointer;
 
   &:hover {
-    background-color: $textColour;
-    color: $bgColour;
+    background-color: $primaryColor;
+    color: $secondaryColor;
   }
 }
 
