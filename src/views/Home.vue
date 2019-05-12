@@ -124,12 +124,17 @@ export default {
           }
 
           .tool {
+            @include flexbox;
+
             &-btn {
               @include hover-invert(cornflowerblue, white);
+              @include flexbox;
               border: 2px solid cornflowerblue;
               margin: 1rem;
               padding: .75rem 2rem;
+              text-align: center;
               transition: all .5s;
+              flex: 1 0 auto;
             }
           }
         }
