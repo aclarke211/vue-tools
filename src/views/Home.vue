@@ -7,6 +7,12 @@
         class="type"
         v-for="(toolType, typeKey) in toolTypes"
         :key="typeKey">
+          <router-link :to="{
+            name: 'toolList',
+            params: {
+              toolName: toolType.name.toLowerCase(),
+            },
+          }">{{ toolType.name }}</router-link>
           <h2 class="type__title">{{ toolType.name }}</h2>
           <div
             :class="['category', category]"
@@ -19,7 +25,7 @@
               :key="toolKey">
               <div
                 class="btn tool-btn"
-                @click="goToNewRoute(toolType, category, toolKey)">
+                @click="goToShowcaseRoute(toolType, category, toolKey)">
                 {{ formattedName(tool.name) }}
               </div>
              </div>
@@ -62,7 +68,7 @@ export default {
         + name.slice(1)).match(/[A-Z][a-z]+|[0-9]+/g).join(' ');
     },
 
-    goToNewRoute(toolType, category, toolKey) {
+    goToShowcaseRoute(toolType, category, toolKey) {
       this.$router.push({
         name: `${toolType.name.toLowerCase()}Showcase`,
         params: {

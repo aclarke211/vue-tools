@@ -13,6 +13,12 @@ export default new Router({
       component: () => import(/* webpackChunkName: "Home" */ './views/Home.vue'),
     },
     {
+      path: '/tools/:toolName',
+      name: 'toolList',
+      component: () => import(/* webpackChunkName: "ToolList" */ './views/ToolList.vue'),
+      props: true,
+    },
+    {
       path: '/module/:name',
       name: 'modulesShowcase',
       component: () => import(/* webpackChunkName: "ModulesShowcase" */ './views/showcases/ModulesShowcase.vue'),
