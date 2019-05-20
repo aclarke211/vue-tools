@@ -2,7 +2,21 @@
   <div :class="className">
     <h2 class="subtitle">{{ $route.params.toolName }}</h2>
 
-    <pre>{{ toolList }}</pre>
+    <div class="tool-list">
+      <div
+      v-for="(tool, toolKey) in toolList"
+      :key="toolKey"
+      class="category">
+        <p class="category__name">{{ tool.category }}</p>
+        <div
+        v-for="(item, itemKey) in tool.items"
+        :key="itemKey"
+        class="">
+        {{ item.name }}
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 
