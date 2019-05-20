@@ -84,7 +84,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../css/base/mixins.scss';
+@import '../../sfc/css/base/mixins.scss';
 
   .home {
     &__title {
