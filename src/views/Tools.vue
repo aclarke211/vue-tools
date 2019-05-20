@@ -8,12 +8,21 @@
       :key="toolKey"
       class="category">
         <p class="category__name">{{ tool.category }}</p>
-        <div
+        <router-link
         v-for="(item, itemKey) in tool.items"
         :key="itemKey"
-        class="">
-        {{ item.name }}
-        </div>
+        class="item"
+        :to="{
+          name: `${$route.params.toolName}Showcase`,
+          params: {
+            name: item.name || null,
+            importRef: item.srcFile || null,
+            additionalTemplates: item.additionalTemplates || null,
+            additionalScripts: item.additionalScripts || null,
+          }
+        }">
+        <p class="item__name">{{ item.name }}</p>
+        </router-link>
       </div>
     </div>
 
@@ -26,6 +35,10 @@ import utilsList from '../../sfc/utils/base/utils-list';
 
 export default {
   name: 'Tools',
+
+  data: () => ({
+    className: 'tools',
+  }),
 
   computed: {
     toolList() {
@@ -44,9 +57,23 @@ export default {
       }
     },
   },
-
-  data: () => ({
-    className: 'tools',
-  }),
 };
 </script>
+
+<style lang="scss">
+  .tools {
+    .tool-list {
+      .category {
+        &__name {
+          font-size: 1.5rem;
+        }
+
+        .item {
+          &__name {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+</style>
