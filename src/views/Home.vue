@@ -12,7 +12,11 @@
             params: {
               toolName: toolType.name.toLowerCase(),
             },
-          }">{{ toolType.name }}</router-link>
+          }"
+          class="type__link">
+            <img class="type__img" :src="toolType.icon">
+            <p class="type__name">{{ toolType.name }}</p>
+          </router-link>
           <!-- <h2 class="type__title">{{ toolType.name }}</h2> -->
           <!-- <div
             :class="['category', category]"
@@ -53,12 +57,12 @@ export default {
       return [
         {
           name: 'Modules',
-          icon: '../assets/images/header/vue-tools-logo.png',
+          icon: 'https://cdn.pixabay.com/photo/2017/07/07/02/05/symbol-2480162_960_720.png',
           list: modulesList,
         },
         {
           name: 'Utils',
-          icon: '../assets/images/header/vue-tools-logo.png',
+          icon: 'https://upload.wikimedia.org/wikipedia/commons/e/e6/Jigsaw_piece_yellow_01.svg',
           list: utilsList,
         },
       ];
@@ -100,51 +104,83 @@ export default {
       display: flex;
       margin: 1rem;
       flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
 
       @include tablet {
         flex-direction: row;
       }
 
+      &:hover .type__link {
+        opacity: .25;
+      }
+
       .type {
         @include flexbox;
         flex-direction: column;
-        flex: 0 0 33.33%;
-        margin: .5rem;
+        flex: 0 0 23%;
+        margin: 2rem .5rem .5rem;
         padding: .5rem;
+        text-align: center;
+        color: darkslategrey;
 
-        &__title {
-          margin: 0;
-          padding: 0;
-          font-size: 1.75rem;
-          color: darkslategrey;
-        }
 
-        .category {
-          @include flexbox;
-          flex-direction: column;
-          padding: .5rem;
-          margin: .5rem;
+        &__link {
+          text-decoration: none;
+          color: inherit;
+          transition: all .5s;
 
-          &__title {
-            margin: 0;
-            padding: 0;
-            font-size: 1.25rem;
-            color: slategrey;
-          }
-
-          .tool {
-            @include flexbox;
-
-            &-btn {
-              @include hover-invert(cornflowerblue, white, 2px);
-              @include flexbox;
-              margin: 1rem;
-              padding: .75rem 2rem;
-              text-align: center;
-              flex: 1 0 auto;
-            }
+          &:hover {
+            opacity: 1;
           }
         }
+
+        &__img {
+          $imgSize: 8rem;
+
+          display: block;
+          height: $imgSize;
+          width: $imgSize;
+        }
+
+        &__name {
+          font-size: 1.25rem;
+        }
+
+        // &__title {
+        //   margin: 0;
+        //   padding: 0;
+        //   font-size: 1.75rem;
+        //   color: darkslategrey;
+        // }
+
+        // .category {
+        //   @include flexbox;
+        //   flex-direction: column;
+        //   padding: .5rem;
+        //   margin: .5rem;
+
+        //   &__title {
+        //     margin: 0;
+        //     padding: 0;
+        //     font-size: 1.25rem;
+        //     color: slategrey;
+        //   }
+
+        //   .tool {
+        //     @include flexbox;
+
+        //     &-btn {
+        //       @include hover-invert(cornflowerblue, white, 2px);
+        //       @include flexbox;
+        //       margin: 1rem;
+        //       padding: .75rem 2rem;
+        //       text-align: center;
+        //       flex: 1 0 auto;
+        //     }
+        //   }
+        // }
       }
     }
   }
