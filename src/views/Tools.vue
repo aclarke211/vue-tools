@@ -11,7 +11,7 @@ import modulesList from '../../sfc/modules/base/modules-list';
 import utilsList from '../../sfc/utils/base/utils-list';
 
 export default {
-  name: 'ToolList',
+  name: 'Tools',
 
   computed: {
     toolList() {
@@ -32,7 +32,7 @@ export default {
   },
 
   data: () => ({
-    className: 'tool-list',
+    className: 'tools',
   }),
 };
 </script>

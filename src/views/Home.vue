@@ -8,7 +8,7 @@
         v-for="(toolType, typeKey) in toolTypes"
         :key="typeKey">
           <router-link :to="{
-            name: 'toolList',
+            name: 'tools',
             params: {
               toolName: toolType.name.toLowerCase(),
             },

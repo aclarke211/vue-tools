@@ -14,8 +14,8 @@ export default new Router({
     },
     {
       path: '/tools/:toolName',
-      name: 'toolList',
-      component: () => import(/* webpackChunkName: "ToolList" */ './views/ToolList.vue'),
+      name: 'tools',
+      component: () => import(/* webpackChunkName: "Tools" */ './views/Tools.vue'),
       props: true,
     },
     {
