@@ -1,6 +1,5 @@
 <template>
   <div :class="className">
-    <h1 class="title">{{ title }}</h1>
     <h2 class="subtitle">{{ $route.params.toolName }}</h2>
 
     <pre>{{ toolList }}</pre>
@@ -8,8 +7,8 @@
 </template>
 
 <script>
-import modulesList from '../modules/base/modules-list';
-import utilsList from '../utils/base/utils-list';
+import modulesList from '../../sfc/modules/base/modules-list';
+import utilsList from '../../sfc/utils/base/utils-list';
 
 export default {
   name: 'ToolList',
@@ -34,7 +33,6 @@ export default {
 
   data: () => ({
     className: 'tool-list',
-    title: 'Tool List',
   }),
 };
 </script>
