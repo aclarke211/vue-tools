@@ -42,6 +42,7 @@ import utilsList from '../../sfc/utils/base/utils-list';
 
 export default {
   name: 'home',
+
   data: () => ({
     className: 'home',
     titleText: 'Vue Tools',
