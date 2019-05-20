@@ -13,8 +13,8 @@
               toolName: toolType.name.toLowerCase(),
             },
           }">{{ toolType.name }}</router-link>
-          <h2 class="type__title">{{ toolType.name }}</h2>
-          <div
+          <!-- <h2 class="type__title">{{ toolType.name }}</h2> -->
+          <!-- <div
             :class="['category', category]"
             v-for="(category, categoryKey) in toolType.list"
             :key="categoryKey">
@@ -29,7 +29,7 @@
                 {{ formattedName(tool.name) }}
               </div>
              </div>
-          </div>
+          </div> -->
       </div>
     </div>
 
@@ -53,10 +53,12 @@ export default {
       return [
         {
           name: 'Modules',
+          icon: '../assets/images/header/vue-tools-logo.png',
           list: modulesList,
         },
         {
           name: 'Utils',
+          icon: '../assets/images/header/vue-tools-logo.png',
           list: utilsList,
         },
       ];
