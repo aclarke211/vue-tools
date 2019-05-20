@@ -70,22 +70,22 @@ export default {
   },
 
   methods: {
-    formattedName(name) {
-      return (name.charAt(0).toUpperCase()
-        + name.slice(1)).match(/[A-Z][a-z]+|[0-9]+/g).join(' ');
-    },
+    // formattedName(name) {
+    //   return (name.charAt(0).toUpperCase()
+    //     + name.slice(1)).match(/[A-Z][a-z]+|[0-9]+/g).join(' ');
+    // },
 
-    goToShowcaseRoute(toolType, category, toolKey) {
-      this.$router.push({
-        name: `${toolType.name.toLowerCase()}Showcase`,
-        params: {
-          name: category[toolKey].name || null,
-          importRef: category[toolKey].srcFile || null,
-          additionalTemplates: category[toolKey].additionalTemplates || null,
-          additionalScripts: category[toolKey].additionalScripts || null,
-        },
-      });
-    },
+    // goToShowcaseRoute(toolType, category, toolKey) {
+    //   this.$router.push({
+    //     name: `${toolType.name.toLowerCase()}Showcase`,
+    //     params: {
+    //       name: category[toolKey].name || null,
+    //       importRef: category[toolKey].srcFile || null,
+    //       additionalTemplates: category[toolKey].additionalTemplates || null,
+    //       additionalScripts: category[toolKey].additionalScripts || null,
+    //     },
+    //   });
+    // },
   },
 };
 </script>
