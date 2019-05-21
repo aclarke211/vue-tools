@@ -1,6 +1,7 @@
 export default [
   {
     category: 'Browser Specs',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/GTK_logo.svg/949px-GTK_logo.svg.png',
     items: [
       {
         name: 'debounceThrottle',
@@ -17,6 +18,7 @@ export default [
   },
   {
     category: 'Styling',
+    image: 'https://cdn.pixabay.com/photo/2016/07/19/08/52/hand-1527793_960_720.png',
     items: [
       {
         name: 'manageStylesheets',
