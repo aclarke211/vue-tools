@@ -40,12 +40,12 @@ export default {
       return [
         {
           name: 'Modules',
-          icon: 'https://cdn.pixabay.com/photo/2017/07/07/02/05/symbol-2480162_960_720.png',
+          icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Toicon-icon-blueprint-experience.svg/1024px-Toicon-icon-blueprint-experience.svg.png',
           list: modulesList,
         },
         {
           name: 'Utils',
-          icon: 'https://upload.wikimedia.org/wikipedia/commons/e/e6/Jigsaw_piece_yellow_01.svg',
+          icon: 'https://cdn.pixabay.com/photo/2016/03/31/18/24/screwdriver-1294338_960_720.png',
           list: utilsList,
         },
       ];
