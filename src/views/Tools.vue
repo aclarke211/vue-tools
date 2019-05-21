@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import modulesList from '../../sfc/modules/base/modules-list';
-import utilsList from '../../sfc/utils/base/utils-list';
+import modulesList from '../../sfc/modules/_base/modules-list';
+import utilsList from '../../sfc/utils/_base/utils-list';
 
 export default {
   name: 'Tools',
