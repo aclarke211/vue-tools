@@ -1,12 +1,13 @@
 <template>
   <div :class="className">
-    <h2 class="subtitle">{{ $route.params.toolName }}</h2>
+    <h2 :class="`${className}__title`">{{ $route.params.toolName }}</h2>
 
     <div class="tool-list">
       <div
       v-for="(tool, toolKey) in toolList"
       :key="toolKey"
       class="category">
+      <img class="category__img" :src="tool.image">
         <p class="category__name">{{ tool.category }}</p>
         <router-link
         v-for="(item, itemKey) in tool.items"
@@ -62,8 +63,24 @@ export default {
 
 <style lang="scss">
   .tools {
+
+    &__title {
+      text-align: center;
+      margin: 2rem;
+      font-size: 1.75rem;
+    }
+
     .tool-list {
       .category {
+        &__img {
+          $imgSize: 5rem;
+
+          display: block;
+          height: $imgSize;
+          width: $imgSize;
+          object-fit: contain;
+        }
+
         &__name {
           font-size: 1.5rem;
         }
