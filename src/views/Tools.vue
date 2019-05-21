@@ -81,7 +81,11 @@ export default {
       .category {
         @include flexbox;
         flex-direction: column;
-        flex: 0 0 25%;
+        flex: 0 0 45%;
+
+        @include tablet {
+          flex: 0 0 25%;
+        }
 
         &__img {
           $imgSize: 5rem;
@@ -108,7 +112,7 @@ export default {
           }
 
           &__name {
-            font-size: 1rem;
+            font-size: 1.25rem;
             border-bottom: 2px solid transparent;
             color: slategrey;
             margin: 0;
