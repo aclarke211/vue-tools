@@ -7,7 +7,10 @@
       v-for="(tool, toolKey) in toolList"
       :key="toolKey"
       class="category">
-      <img class="category__img" :src="tool.image">
+        <img
+          v-if="tool.image"
+          class="category__img"
+          :src="tool.image">
         <p class="category__name">{{ tool.category }}</p>
         <router-link
         v-for="(item, itemKey) in tool.items"
@@ -62,16 +65,24 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../sfc/css/_base/mixins.scss';
+
   .tools {
 
     &__title {
       text-align: center;
-      margin: 2rem;
+      margin: 2rem 2rem 4rem;
       font-size: 1.75rem;
     }
 
     .tool-list {
+      @include flexbox;
+
       .category {
+        @include flexbox;
+        flex-direction: column;
+        flex: 0 0 25%;
+
         &__img {
           $imgSize: 5rem;
 
@@ -83,6 +94,7 @@ export default {
 
         &__name {
           font-size: 1.5rem;
+          margin: .5rem;
         }
 
         .item {
