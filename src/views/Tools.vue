@@ -98,8 +98,22 @@ export default {
         }
 
         .item {
+          text-decoration: none;
+          margin: 1.25rem;
+          transition: all .5s;
+          cursor: pointer;
+
+          &:hover .item__name {
+            border-bottom-color: darkslategrey;
+          }
+
           &__name {
             font-size: 1rem;
+            border-bottom: 2px solid transparent;
+            color: slategrey;
+            margin: 0;
+            padding: 0 0 .25rem;
+            transition: all .5s;
           }
         }
       }
