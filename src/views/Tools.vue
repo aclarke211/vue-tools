@@ -20,11 +20,12 @@
           name: `${$route.params.toolName}Showcase`,
           params: {
             name: item.name || null,
-            className: `${$route.params.toolName}-showcase`,
-            titleText: `${$route.params.toolName} Showcase`,
+            className: `${$route.params.toolName}-showcase` || null,
+            titleText: `${$route.params.toolName} Showcase` || null,
             importRef: item.srcFile || null,
             additionalTemplates: item.additionalTemplates || null,
             additionalScripts: item.additionalScripts || null,
+            props: item.props || null
           }
         }">
         <p class="item__name">{{ item.name }}</p>

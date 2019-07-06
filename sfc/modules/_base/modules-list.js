@@ -6,6 +6,9 @@ export default [
       {
         name: 'TextModule',
         srcFile: () => import('../TextModule.vue'),
+        props: {
+          text: 'This is the updated Text Module text.',
+        },
         additionalTemplates: ['<h2>The TEXT MODULE can be used for...</h2>'],
         additionalScripts: [
           () => {

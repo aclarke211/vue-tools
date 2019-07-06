@@ -10,7 +10,8 @@
 
      <component
       v-if="importRef"
-      :is="importRef" />
+      :is="importRef"
+      v-bind="props" />
   </div>
 </template>
 
@@ -27,6 +28,11 @@ export default {
     titleText: {
       type: String,
       default: 'Showcase',
+    },
+
+    props: {
+      type: Object,
+      default: () => {},
     },
 
     importRef: {
