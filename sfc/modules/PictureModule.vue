@@ -1,7 +1,7 @@
 <template>
     <!-- Aspect Ratio Box -->
   <div
-    :class="`${defaultClass}-picture`"
+    :class="[className, config.className]"
     v-if="images" >
     <!-- Picture element to switch between desktop and mobile images -->
     <picture class="aspect__container"
@@ -13,7 +13,7 @@
         :srcset="images.mobile"
         v-if="images.mobile" >
       <img
-        :class="`${defaultClass}-img`"
+        class="img"
         :src="images.desktop"
         v-if="images.desktop" >
     </picture>
@@ -21,11 +21,14 @@
 </template>
 
 <script>
+import config from '../../config/default.json';
+
 export default {
   name: 'Picture',
 
   data: () => ({
-    defaultClass: 'vc',
+    config,
+    className: 'picture',
     breakpoints: {
       tablet: '767px',
     },
