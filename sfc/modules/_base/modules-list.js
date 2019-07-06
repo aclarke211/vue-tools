@@ -1,7 +1,7 @@
 export default [
   {
     category: 'Text',
-    image: 'https://cdn.pixabay.com/photo/2012/04/11/10/30/text-27354_960_720.png',
+    icon: 'https://cdn.pixabay.com/photo/2012/04/11/10/30/text-27354_960_720.png',
     items: [
       {
         name: 'TextModule',
@@ -18,7 +18,7 @@ export default [
   },
   {
     category: 'Picture',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Picture_icon-72a7cf.svg/1024px-Picture_icon-72a7cf.svg.png',
+    icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Picture_icon-72a7cf.svg/1024px-Picture_icon-72a7cf.svg.png',
     items: [
       {
         name: 'PictureModule',

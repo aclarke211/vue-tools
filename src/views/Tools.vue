@@ -8,9 +8,9 @@
       :key="toolKey"
       class="category">
         <img
-          v-if="tool.image"
+          v-if="tool.icon"
           class="category__img"
-          :src="tool.image">
+          :src="tool.icon">
         <p class="category__name">{{ tool.category }}</p>
         <router-link
         v-for="(item, itemKey) in tool.items"
