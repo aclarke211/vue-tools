@@ -1,5 +1,5 @@
 <template>
-  <div :class="className">
+  <div :class="[className, config.className]">
     <h2 :class="`${className}__title`">{{ $route.params.toolName }}</h2>
 
     <div class="tool-list">
@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import config from '../../config/default.json';
 import modulesList from '../../sfc/modules/_base/modules-list';
 import utilsList from '../../sfc/utils/_base/utils-list';
 
@@ -44,6 +45,7 @@ export default {
   name: 'Tools',
 
   data: () => ({
+    config,
     className: 'tools',
   }),
 

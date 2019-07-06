@@ -1,5 +1,5 @@
 <template>
-  <div :class="className">
+  <div :class="[className, config.className]">
      <h1 :class="`${className}__title`">{{ titleText }}</h1>
      <h2>This is the {{ routeName }}</h2>
 
@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import config from '../../config/default.json';
+
 export default {
   name: 'Showcase',
 
@@ -50,6 +52,10 @@ export default {
       default: () => [],
     },
   },
+
+  data: () => ({
+    config,
+  }),
 
   computed: {
     routeName() {

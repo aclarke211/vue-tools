@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="text || subtext"
-    :class="['vc', className]">
+    :class="[className, config.className]">
     <p
     v-if="text"
     class="text"
@@ -18,10 +18,13 @@
 </template>
 
 <script>
+import config from '../../config/default.json';
+
 export default {
   name: 'TextModule',
 
   data: () => ({
+    config,
     className: 'text-module',
   }),
 
