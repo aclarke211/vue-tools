@@ -27,8 +27,7 @@ export default {
 
     additionalScripts: {
       type: [Array, Function],
-      // eslint-disable-next-line
-      default: () => ([() => { alert('There are no additional scripts for this page.') }]),
+      default: () => [],
     },
   },
 
@@ -43,10 +42,18 @@ export default {
     },
   },
 
+  methods: {
+    runAdditionalScripts() {
+      if (this.additionalScripts.length) {
+        this.additionalScripts.forEach((additionalScript) => {
+          additionalScript();
+        });
+      }
+    },
+  },
+
   mounted() {
-    this.additionalScripts.forEach((additionalScript) => {
-      additionalScript();
-    });
+    this.runAdditionalScripts();
   },
 };
 </script>

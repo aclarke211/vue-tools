@@ -6,6 +6,12 @@ export default [
       {
         name: 'TextModule',
         srcFile: () => import('../TextModule.vue'),
+        additionalScripts: [
+          () => {
+            // eslint-disable-next-line
+            alert('Need to run the script for the util here.');
+          },
+        ],
       },
     ],
   },
@@ -16,6 +22,12 @@ export default [
       {
         name: 'PictureModule',
         srcFile: () => import('../PictureModule.vue'),
+        additionalScripts: [
+          () => {
+            // eslint-disable-next-line
+            alert('Need to run the script for the util here.');
+          },
+        ],
       },
     ],
   },

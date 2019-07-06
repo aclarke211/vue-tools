@@ -17,6 +17,11 @@ export default {
       type: Function,
       default: () => ({}),
     },
+
+    additionalScripts: {
+      type: [Array, Function],
+      default: () => [],
+    },
   },
 
   data: () => ({
@@ -28,6 +33,20 @@ export default {
     routeModuleName() {
       return this.$route.params.name;
     },
+  },
+
+  methods: {
+    runAdditionalScripts() {
+      if (this.additionalScripts.length) {
+        this.additionalScripts.forEach((additionalScript) => {
+          additionalScript();
+        });
+      }
+    },
+  },
+
+  mounted() {
+    this.runAdditionalScripts();
   },
 };
 </script>
