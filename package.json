@@ -6,7 +6,11 @@
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "refresh:node_modules": "rm -fr node_modules && npm i",
+    "git:commit": "git add . && git commit --allow-empty -m",
+    "git:push": "git push --all",
+    "test-git-commit": "npm run git:commit -- \"Testing committing to repo via NPM script.\" && npm run git:push"
   },
   "dependencies": {
     "vue": "^2.6.6",
