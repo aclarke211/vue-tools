@@ -6,6 +6,7 @@ export default [
       {
         name: 'TextModule',
         srcFile: () => import('../TextModule.vue'),
+        additionalTemplates: ['<h2>The TEXT MODULE can be used for...</h2>'],
         additionalScripts: [
           () => {
             // eslint-disable-next-line

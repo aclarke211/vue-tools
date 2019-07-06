@@ -21,13 +21,13 @@ export default new Router({
     {
       path: '/module/:name',
       name: 'modulesShowcase',
-      component: () => import(/* webpackChunkName: "ModulesShowcase" */ './views/showcases/ModulesShowcase.vue'),
+      component: () => import(/* webpackChunkName: "ModulesShowcase" */ './views/Showcase.vue'),
       props: true,
     },
     {
       path: '/util/:name',
       name: 'utilsShowcase',
-      component: () => import(/* webpackChunkName: "UtilsShowcase" */ './views/showcases/UtilsShowcase.vue'),
+      component: () => import(/* webpackChunkName: "UtilsShowcase" */ './views/Showcase.vue'),
       props: true,
     },
   ],

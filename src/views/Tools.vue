@@ -20,6 +20,8 @@
           name: `${$route.params.toolName}Showcase`,
           params: {
             name: item.name || null,
+            className: `${$route.params.toolName}-showcase`,
+            titleText: `${$route.params.toolName} Showcase`,
             importRef: item.srcFile || null,
             additionalTemplates: item.additionalTemplates || null,
             additionalScripts: item.additionalScripts || null,
