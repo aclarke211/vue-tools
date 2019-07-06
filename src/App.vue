@@ -5,7 +5,6 @@
 </template>
 
 <style lang="scss">
-
 @import '../sfc/css/_base/mixins.scss';
 
 @font-face {
@@ -24,5 +23,4 @@
   margin: 0;
   padding: 0;
 }
-
 </style>
