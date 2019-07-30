@@ -99,7 +99,7 @@ export default {
       color: darkgrey;
       font-size: 1rem;
       text-align: center;
-      padding: 1rem;
+      padding: .5rem 1rem 1rem;
       margin: 0 1rem 4rem;
     }
 
