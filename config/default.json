@@ -1,3 +1,17 @@
 {
-  "className": "vue-tools"
+  "className": "vue-tools",
+  "tools": {
+    "modules": {
+      "title": "Modules",
+      "description": "These are smaller file which make up the components."
+    },
+    "components": {
+      "title": "Components",
+      "description": "These are used to make up web pages/apps."
+    },
+    "utils": {
+      "title": "Utils",
+      "description": "These are tools which will help with functionality/styling of a website/web app."
+    }
+  }
 }

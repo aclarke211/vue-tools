@@ -1,6 +1,16 @@
 <template>
   <div :class="[className, config.className]">
-    <h2 :class="`${className}__title`">{{ $route.params.toolName }}</h2>
+    <h2
+      v-if="toolData.title"
+      :class="`${className}__title`">
+      {{ toolData.title }}
+    </h2>
+
+    <p
+      v-if="toolData.description"
+      :class="`${className}__description`">
+      {{ toolData.description }}
+    </p>
 
     <div class="tool-list">
       <div
@@ -65,6 +75,10 @@ export default {
         }
       }
     },
+
+    toolData() {
+      return config.tools[this.$route.params.toolName];
+    },
   },
 };
 </script>
@@ -76,8 +90,17 @@ export default {
 
     &__title {
       text-align: center;
-      margin: 2rem 2rem 4rem;
+      margin: 2rem 1rem 0;
+      padding: 1rem;
       font-size: 1.75rem;
+    }
+
+    &__description {
+      color: darkgrey;
+      font-size: 1rem;
+      text-align: center;
+      padding: 1rem;
+      margin: 0 1rem 4rem;
     }
 
     .tool-list {
