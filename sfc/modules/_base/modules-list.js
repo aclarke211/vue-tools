@@ -9,11 +9,11 @@ export default [
         props: {
           text: 'This is the updated Text Module text.',
         },
-        additionalTemplates: ['<h2>The TEXT MODULE can be used for...</h2>'],
+        additionalTemplates: ['<h2>The <span>TEXT MODULE</span> can be used for...</h2>'],
         additionalScripts: [
           () => {
             // eslint-disable-next-line
-            alert('Need to run the script for the util here.');
+            console.log('[TEXT MODULE] Loaded.')
           },
         ],
       },
@@ -29,7 +29,7 @@ export default [
         additionalScripts: [
           () => {
             // eslint-disable-next-line
-            alert('Need to run the script for the util here.');
+            console.log('[PICTURE MODULE] Loaded')
           },
         ],
       },
