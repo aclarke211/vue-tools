@@ -17,6 +17,20 @@ export default [
           },
         ],
       },
+      {
+        name: 'TitleModule',
+        srcFile: () => import('../TitleModule.vue'),
+        props: {
+          text: 'This is the updated TITLE Module text.',
+        },
+        additionalTemplates: ['<h2>The <span>TITLE MODULE</span> can also have a subtitle.</h2>'],
+        additionalScripts: [
+          () => {
+            // eslint-disable-next-line
+            console.log('[TITLE MODULE] Loaded.')
+          },
+        ],
+      },
     ],
   },
   {
