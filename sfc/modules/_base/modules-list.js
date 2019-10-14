@@ -7,9 +7,9 @@ export default [
         name: 'TextModule',
         srcFile: () => import('../TextModule.vue'),
         props: {
-          text: 'This is the updated Text Module text.',
+          text: 'This is the Text Module updated via a prop.',
         },
-        additionalTemplates: ['<h2>The <span>TEXT MODULE</span> can be used for...</h2>'],
+        additionalTemplates: ['<pre>The <span>Text Module</span> can be used for...</pre>'],
         additionalScripts: [
           () => {
             // eslint-disable-next-line
@@ -23,7 +23,7 @@ export default [
         props: {
           text: 'This is the updated TITLE Module text.',
         },
-        additionalTemplates: ['<h2>The <span>TITLE MODULE</span> can also have a subtitle.</h2>'],
+        additionalTemplates: ['<pre>The <span>Title Module</span> can also have a subtitle.</pre>'],
         additionalScripts: [
           () => {
             // eslint-disable-next-line
