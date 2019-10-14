@@ -1,11 +1,15 @@
 <template>
   <div :class="[className, config.className]">
      <h1 :class="`${className}__title`">{{ titleText }}</h1>
-     <h2>This is the {{ routeName }}</h2>
+     <h2
+      :class="`${className}__name`">
+      {{ routeName }}
+    </h2>
 
      <div
       v-for="(additionalTemplate, addTempKey) in additionalTemplates"
       :key="addTempKey"
+      class="additional-template"
       v-html="additionalTemplate" />
 
      <component
@@ -18,15 +22,11 @@
 <script>
 import config from '../../config/default.json';
 
+
 export default {
   name: 'Showcase',
 
   props: {
-    className: {
-      type: String,
-      default: 'showcase',
-    },
-
     titleText: {
       type: String,
       default: 'Showcase',
@@ -55,6 +55,7 @@ export default {
 
   data: () => ({
     config,
+    className: 'showcase',
   }),
 
   computed: {
@@ -80,13 +81,20 @@ export default {
 </script>
 
 <style lang="scss">
-  .module-showcase {
-    border: solid seagreen;
+  .showcase {
+    border: 1px solid gainsboro;
+    margin: 0;
+    padding: 2rem;
 
     &__title {
-      font-size: 2.25rem;
-      color: blue;
+      font-size: .75rem;
+      color: silver;
       text-decoration: underline;
+      text-align: right;
+    }
+
+    .additional-template {
+      margin: 0 0 4rem;
     }
   }
 </style>
