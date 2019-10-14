@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="title || subtitle"
-    :class="`${className}-container`">
+    :class="[`${className}-container`, textAlignment]">
     <h1
     v-if="title"
     :class="[className, config.className, {'no-subtitle': !subtitle}, {'underline': underline}]"
@@ -33,9 +33,34 @@ export default {
       type: String,
       default: 'Subtitle',
     },
+    align: {
+      /**
+       * String or Object here so we have the option to
+      add the 'options' property, which can be used in a select box
+       */
+      type: [String, Object],
+      default: () => ({
+        current: 'center',
+        options: [
+          {
+            text: 'Option 1',
+            value: 'option-1',
+          },
+        ],
+      }),
+    },
     underline: {
       type: Boolean,
       default: true,
+    },
+  },
+
+  computed: {
+    textAlignment() {
+      if (this.align.current) {
+        return this.align.current;
+      }
+      return this.align;
     },
   },
 };
@@ -47,11 +72,25 @@ export default {
   font-weight: 600;
   padding: 0;
   margin: 1rem 0 0;
-  display: flex;
 
   &-container {
-    border: 2px solid blue;
-    margin: 6rem;
+    display: flex;
+    flex-direction: column;
+
+    &.left {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    &.center {
+      justify-content: center;
+      align-items: center;
+    }
+
+    &.right {
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
   }
 
   &.no-subtitle {
