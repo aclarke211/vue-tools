@@ -4,11 +4,11 @@
     :class="`${className}-container`">
     <h1
     v-if="title"
-    :class="[className, config.className, {'no-subtitle': !subtitle}]"
+    :class="[className, config.className, {'no-subtitle': !subtitle}, {'underline': underline}]"
     v-html="title" />
     <h2
     v-if="subtitle"
-    :class="['subtitle', config.className, {'no-title': !title}]"
+    :class="['subtitle', config.className, {'no-title': !title}, {'underline': underline}]"
     v-html="subtitle" />
   </div>
 </template>
@@ -32,6 +32,10 @@ export default {
     subtitle: {
       type: String,
       default: 'Subtitle',
+    },
+    underline: {
+      type: Boolean,
+      default: true,
     },
   },
 };
@@ -62,6 +66,12 @@ export default {
 
   &.no-title {
     margin: .5rem 0;
+  }
+}
+
+.title-module, .subtitle {
+  &.underline {
+    border-bottom: 2px solid black;
   }
 }
 </style>
