@@ -20,12 +20,15 @@
       </div>
     </div>
 
+    <ExampleComponent />
+
   </div>
 </template>
 
 <script>
 import modulesList from '../../sfc/modules/_base/modules-list';
 import utilsList from '../../sfc/utils/_base/utils-list';
+import ExampleComponent from '../../sfc/components/_base/ExampleComponent.vue';
 
 export default {
   name: 'home',
@@ -50,6 +53,10 @@ export default {
         },
       ];
     },
+  },
+
+  components: {
+    ExampleComponent,
   },
 };
 </script>

@@ -2,7 +2,7 @@
     <!-- Container for the component -->
   <div :class="className">
     <!-- Showing a Prop value as plain text -->
-    <h2 class="title__container">{{ exampleProp.text.title }}</h2>
+    <h2 class="title__container" :style="{color: randomColour}">{{ exampleProp.text.title }}</h2>
     <!-- Allowing HTML to be inputted as the value -->
     <div class="subtitle__container" v-html="exampleProp.text.subtitle" />
     <!-- Outputting Computed property values -->
@@ -35,6 +35,21 @@ export default {
   computed: {
     exampleComputedProperty() {
       return `Computed Text: ${this.exampleProp.text.title} ${this.exampleProp.text.subtitle}`;
+    },
+
+    randomColour() {
+      const hex = ['a', 'b', 'c', 'd', 'e', 'f', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+      const defaultColourValues = ['0', '0', '0', '0', '0', '0'];
+
+      const color = defaultColourValues.map((char) => {
+        let hexValue = char;
+        const hexIndex = Math.floor(Math.random() * (hex.length) - 0) + 0;
+
+        hexValue = hex[hexIndex];
+        return hexValue;
+      });
+
+      return `#${color.toString().replaceAll(',', '')}`;
     },
   },
 
